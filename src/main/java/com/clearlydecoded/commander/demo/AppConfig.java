@@ -1,6 +1,6 @@
 package com.clearlydecoded.commander.demo;
 
-import com.clearlydecoded.commander.rest.RestCommandExecutor;
+import com.clearlydecoded.commander.rest.SpringRestCommander;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,7 +19,7 @@ public class AppConfig {
    * requests.
    */
   @Bean
-  protected RestCommandExecutor createRestCommandExecutor(ApplicationContext springContext) {
-    return new RestCommandExecutor(springContext);
+  protected SpringRestCommander createRestCommandExecutor(ApplicationContext springContext) {
+    return new SpringRestCommander(springContext);
   }
 }
