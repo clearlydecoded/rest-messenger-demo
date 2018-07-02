@@ -41,4 +41,9 @@ public class MaxSugarOrderHandler implements CommandHandler<MaxSugarOrder, MaxSu
   public Class<MaxSugarOrder> getCompatibleCommandClassType() {
     return MaxSugarOrder.class;
   }
+
+  @Override
+  public Class<MaxSugarOrderResponse> getCompatibleCommandResponseClassType() {
+    return MaxSugarOrderResponse.class;
+  }
 }

@@ -33,4 +33,9 @@ public class GingerCookieOrderHandler implements
   public Class<GingerCookieOrder> getCompatibleCommandClassType() {
     return GingerCookieOrder.class;
   }
+
+  @Override
+  public Class<GingerCookieOrderResponse> getCompatibleCommandResponseClassType() {
+    return GingerCookieOrderResponse.class;
+  }
 }

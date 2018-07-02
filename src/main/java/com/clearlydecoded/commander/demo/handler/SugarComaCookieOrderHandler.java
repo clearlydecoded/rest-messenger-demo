@@ -33,4 +33,9 @@ public class SugarComaCookieOrderHandler implements
   public Class<SugarComaCookieOrder> getCompatibleCommandClassType() {
     return SugarComaCookieOrder.class;
   }
+
+  @Override
+  public Class<SugarComaCookieOrderResponse> getCompatibleCommandResponseClassType() {
+    return SugarComaCookieOrderResponse.class;
+  }
 }

@@ -19,7 +19,7 @@ public class AppConfig {
    * requests.
    */
   @Bean
-  protected SpringRestCommander createRestCommandExecutor(ApplicationContext springContext) {
+  protected SpringRestCommander createSpringRestCommander(ApplicationContext springContext) {
     return new SpringRestCommander(springContext);
   }
 }
