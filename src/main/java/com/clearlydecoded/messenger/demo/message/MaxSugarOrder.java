@@ -1,6 +1,6 @@
-package com.clearlydecoded.commander.demo.command;
+package com.clearlydecoded.messenger.demo.message;
 
-import com.clearlydecoded.commander.Command;
+import com.clearlydecoded.messenger.Message;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class MaxSugarOrder implements Command<MaxSugarOrderResponse> {
+public class MaxSugarOrder implements Message<MaxSugarOrderResponse> {
 
   public static final String TYPE = "MaxSugarOrder";
 

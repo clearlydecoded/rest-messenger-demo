@@ -1,4 +1,4 @@
-package com.clearlydecoded.commander.demo;
+package com.clearlydecoded.messenger.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

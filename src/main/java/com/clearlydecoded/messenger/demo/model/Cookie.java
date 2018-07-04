@@ -1,4 +1,4 @@
-package com.clearlydecoded.commander.demo.model;
+package com.clearlydecoded.messenger.demo.model;
 
 import java.io.Serializable;
 import lombok.AllArgsConstructor;

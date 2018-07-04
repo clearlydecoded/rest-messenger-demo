@@ -1,4 +1,4 @@
-package com.clearlydecoded.commander.demo.service;
+package com.clearlydecoded.messenger.demo.service;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;

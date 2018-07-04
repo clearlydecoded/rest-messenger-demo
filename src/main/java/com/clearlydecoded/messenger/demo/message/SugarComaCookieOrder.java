@@ -1,12 +1,12 @@
-package com.clearlydecoded.commander.demo.command;
+package com.clearlydecoded.messenger.demo.message;
 
-import com.clearlydecoded.commander.Command;
+import com.clearlydecoded.messenger.Message;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class SugarComaCookieOrder implements Command<SugarComaCookieOrderResponse> {
+public class SugarComaCookieOrder implements Message<SugarComaCookieOrderResponse> {
 
   public static final String TYPE = "SugarComaCookieOrder";
 

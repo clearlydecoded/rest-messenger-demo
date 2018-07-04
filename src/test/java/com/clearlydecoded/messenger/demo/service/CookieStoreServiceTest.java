@@ -1,8 +1,8 @@
-package com.clearlydecoded.commander.demo.service;
+package com.clearlydecoded.messenger.demo.service;
 
 import static org.junit.Assert.assertEquals;
 
-import com.clearlydecoded.commander.demo.model.Cookie;
+import com.clearlydecoded.messenger.demo.model.Cookie;
 import java.util.List;
 import org.junit.Test;
 

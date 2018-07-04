@@ -1,6 +1,6 @@
-package com.clearlydecoded.commander.demo.service;
+package com.clearlydecoded.messenger.demo.service;
 
-import com.clearlydecoded.commander.demo.model.Cookie;
+import com.clearlydecoded.messenger.demo.model.Cookie;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Service;
