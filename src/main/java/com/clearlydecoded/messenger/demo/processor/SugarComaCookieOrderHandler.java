@@ -1,4 +1,4 @@
-package com.clearlydecoded.messenger.demo.handler;
+package com.clearlydecoded.messenger.demo.processor;
 
 import com.clearlydecoded.messenger.MessageProcessor;
 import com.clearlydecoded.messenger.demo.message.SugarComaCookieOrder;
