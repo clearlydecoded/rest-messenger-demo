@@ -6,7 +6,7 @@ import java.util.Objects;
 public class GreetMeMessage implements Message<GreetMeMessageResponse> {
 
   /**
-   * Set up the required command type identifier like so.
+   * Set up the required message type identifier like so.
    * There are other ways to define it, but this approach is nice.
    */
   public static final String TYPE = "GreetMe";
