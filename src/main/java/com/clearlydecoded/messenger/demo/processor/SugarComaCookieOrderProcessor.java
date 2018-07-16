@@ -8,7 +8,7 @@
  */
 package com.clearlydecoded.messenger.demo.processor;
 
-import com.clearlydecoded.messenger.AbstractMessageProcessor;
+import com.clearlydecoded.messenger.MessageProcessor;
 import com.clearlydecoded.messenger.demo.message.SugarComaCookieOrder;
 import com.clearlydecoded.messenger.demo.message.SugarComaCookieOrderResponse;
 import com.clearlydecoded.messenger.demo.model.Cookie;
@@ -22,9 +22,9 @@ import org.springframework.stereotype.Service;
  *
  * @author Yaakov Chaikin (yaakov@ClearlyDecoded.com)
  */
-@Service
-public class SugarComaCookieOrderProcessor extends
-    AbstractMessageProcessor<SugarComaCookieOrder, SugarComaCookieOrderResponse> {
+@Service // Must have this annotation for Spring to discover the class
+public class SugarComaCookieOrderProcessor implements
+    MessageProcessor<SugarComaCookieOrder, SugarComaCookieOrderResponse> {
 
   @SuppressWarnings("SpringJavaAutowiredFieldsWarningInspection")
   @Autowired
@@ -33,7 +33,26 @@ public class SugarComaCookieOrderProcessor extends
 
   @Override
   public SugarComaCookieOrderResponse process(SugarComaCookieOrder message) {
+    // This is where you write the actual business logic
     Cookie comaCookie = cookieStoreService.giveMeSugarComaCookie();
     return new SugarComaCookieOrderResponse(comaCookie);
+  }
+
+  @Override
+  public String getCompatibleMessageType() {
+    // SEE! Defining that TYPE as public static final paid off!
+    // You certainly CAN just hardcode a string here, but this is more robust.
+    // Don't worry, if you mess this up, the validation at startup will catch it
+    return SugarComaCookieOrder.TYPE;
+  }
+
+  @Override
+  public Class<SugarComaCookieOrder> getCompatibleMessageClassType() {
+    return SugarComaCookieOrder.class; // not possible to mess up here
+  }
+
+  @Override
+  public Class<SugarComaCookieOrderResponse> getCompatibleMessageResponseClassType() {
+    return SugarComaCookieOrderResponse.class; // not possible to mess up here
   }
 }
