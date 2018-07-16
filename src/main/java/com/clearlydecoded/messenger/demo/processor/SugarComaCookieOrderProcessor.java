@@ -9,8 +9,8 @@
 package com.clearlydecoded.messenger.demo.processor;
 
 import com.clearlydecoded.messenger.AbstractMessageProcessor;
-import com.clearlydecoded.messenger.demo.message.GingerCookieOrder;
-import com.clearlydecoded.messenger.demo.message.GingerCookieOrderResponse;
+import com.clearlydecoded.messenger.demo.message.SugarComaCookieOrder;
+import com.clearlydecoded.messenger.demo.message.SugarComaCookieOrderResponse;
 import com.clearlydecoded.messenger.demo.model.Cookie;
 import com.clearlydecoded.messenger.demo.service.CookieStoreService;
 import lombok.Setter;
@@ -18,13 +18,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * Demo class that is a processor for {@link GingerCookieOrder} message.
+ * Demo class that is a processor for the {@link SugarComaCookieOrder} message.
  *
  * @author Yaakov Chaikin (yaakov@ClearlyDecoded.com)
  */
 @Service
-public class GingerCookieOrderHandler extends
-    AbstractMessageProcessor<GingerCookieOrder, GingerCookieOrderResponse> {
+public class SugarComaCookieOrderProcessor extends
+    AbstractMessageProcessor<SugarComaCookieOrder, SugarComaCookieOrderResponse> {
 
   @SuppressWarnings("SpringJavaAutowiredFieldsWarningInspection")
   @Autowired
@@ -32,8 +32,8 @@ public class GingerCookieOrderHandler extends
   private CookieStoreService cookieStoreService;
 
   @Override
-  public GingerCookieOrderResponse process(GingerCookieOrder message) {
-    Cookie gingerCookie = cookieStoreService.giveMeFirstOneWithAdditionOf("Ginger");
-    return new GingerCookieOrderResponse(gingerCookie);
+  public SugarComaCookieOrderResponse process(SugarComaCookieOrder message) {
+    Cookie comaCookie = cookieStoreService.giveMeSugarComaCookie();
+    return new SugarComaCookieOrderResponse(comaCookie);
   }
 }
