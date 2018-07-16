@@ -8,9 +8,12 @@
  */
 package com.clearlydecoded.messenger.demo.service;
 
+import static org.junit.Assert.assertTrue;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
 import com.clearlydecoded.messenger.demo.message.GreetMeMessage;
 import com.clearlydecoded.messenger.demo.message.GreetMeMessageResponse;
@@ -23,6 +26,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
 
 /**
  * Spot tests the functionality of the message processors when everything is wired in as an app.
@@ -51,6 +55,19 @@ public class MessageRestEndpointTest {
         .andExpect(status().isOk())
         .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
         .andExpect(content().string(expectedResponseString));
+  }
+
+  @Test
+  public void testGetDocsPage() throws Exception {
+    MvcResult result = mvc.perform(get("/process"))
+        .andExpect(status().isOk())
+        .andExpect(view().name("SpringRestProcessorDocumentation"))
+        .andExpect(content().contentType(MediaType.TEXT_HTML_VALUE + ";charset=UTF-8"))
+        .andReturn();
+
+    String stringResult = result.getResponse().getContentAsString();
+    assertTrue("Response should at least contain snippet of HTML page.",
+        stringResult.contains("Spring REST Messenger Docs"));
   }
 
 }
