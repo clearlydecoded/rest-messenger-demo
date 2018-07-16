@@ -23,7 +23,7 @@ import org.springframework.stereotype.Service;
  * @author Yaakov Chaikin (yaakov@ClearlyDecoded.com)
  */
 @Service
-public class GingerCookieOrderHandler extends
+public class GingerCookieOrderProcessor extends
     AbstractMessageProcessor<GingerCookieOrder, GingerCookieOrderResponse> {
 
   @SuppressWarnings("SpringJavaAutowiredFieldsWarningInspection")
