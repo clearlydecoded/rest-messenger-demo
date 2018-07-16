@@ -24,7 +24,7 @@ import org.springframework.stereotype.Service;
  * @author Yaakov Chaikin (yaakov@ClearlyDecoded.com)
  */
 @Service
-public class MaxSugarOrderHandler extends
+public class MaxSugarOrderProcessor extends
     AbstractMessageProcessor<MaxSugarOrder, MaxSugarOrderResponse> {
 
   @SuppressWarnings("SpringJavaAutowiredFieldsWarningInspection")
