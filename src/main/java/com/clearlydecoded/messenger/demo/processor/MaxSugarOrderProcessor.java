@@ -14,6 +14,7 @@ import com.clearlydecoded.messenger.demo.message.MaxSugarOrderResponse;
 import com.clearlydecoded.messenger.demo.model.Cookie;
 import com.clearlydecoded.messenger.demo.service.CookieStoreService;
 import java.util.List;
+import javax.validation.Valid;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,7 +34,7 @@ public class MaxSugarOrderProcessor extends
   private CookieStoreService cookieStoreService;
 
   @Override
-  public MaxSugarOrderResponse process(MaxSugarOrder message) {
+  public MaxSugarOrderResponse process(@Valid MaxSugarOrder message) {
     List<Cookie> cookies = cookieStoreService
         .giveMeCookiesUpToMaxSugar(message.getMaxSugarInGrams());
 

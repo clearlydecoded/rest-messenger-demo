@@ -18,6 +18,12 @@ import java.util.Objects;
  */
 public class SugarComaCookieOrder implements Message<SugarComaCookieOrderResponse> {
 
+  /**
+   * Set up the required message type identifier like so.
+   * There are other ways to define it, but this approach is useful because this message will get
+   * processed by a processor that implements the MessageProcessor interface and this public static
+   * type makes it easy to use for a return type of getCompatibleMessageType method.
+   */
   public static final String TYPE = "SugarComaCookieOrder";
 
   private final String type = TYPE;

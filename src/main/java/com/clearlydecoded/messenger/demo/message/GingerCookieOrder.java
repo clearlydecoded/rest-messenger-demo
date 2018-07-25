@@ -18,9 +18,7 @@ import java.util.Objects;
  */
 public class GingerCookieOrder implements Message<GingerCookieOrderResponse> {
 
-  public static final String TYPE = "FirstAvailableGingerCookieOrder";
-
-  private final String type = TYPE;
+  private final String type = "FirstAvailableGingerCookieOrder";
 
   public GingerCookieOrder() {
   }
