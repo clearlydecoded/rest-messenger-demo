@@ -9,6 +9,8 @@
 package com.clearlydecoded.messenger.demo.message;
 
 import com.clearlydecoded.messenger.Message;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -28,10 +30,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class MaxSugarOrder implements Message<MaxSugarOrderResponse> {
 
-  public static final String TYPE = "MaxSugarOrder";
+  private final String type = "MaxSugarOrder";
 
-  private final String type = TYPE;
-
+  @Min(value = 10, message = "'maxSugarInGrams' must be between 10 and 2000.")
+  @Max(value = 2000, message = "'maxSugarInGrams' must be between 10 and 2000.")
   private int maxSugarInGrams;
 
   @Override

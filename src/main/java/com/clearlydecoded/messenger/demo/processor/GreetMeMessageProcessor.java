@@ -11,6 +11,7 @@ package com.clearlydecoded.messenger.demo.processor;
 import com.clearlydecoded.messenger.AbstractMessageProcessor;
 import com.clearlydecoded.messenger.demo.message.GreetMeMessage;
 import com.clearlydecoded.messenger.demo.message.GreetMeMessageResponse;
+import javax.validation.Valid;
 import org.springframework.stereotype.Service;
 
 /**
@@ -23,7 +24,7 @@ public class GreetMeMessageProcessor extends
     AbstractMessageProcessor<GreetMeMessage, GreetMeMessageResponse> {
 
   @Override
-  public GreetMeMessageResponse process(GreetMeMessage message) {
+  public GreetMeMessageResponse process(@Valid GreetMeMessage message) {
 
     // This is where you write the actual business logic
     return new GreetMeMessageResponse("Hello " + message.getMyName());

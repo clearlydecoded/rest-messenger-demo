@@ -10,6 +10,8 @@ package com.clearlydecoded.messenger.demo.message;
 
 import com.clearlydecoded.messenger.Message;
 import java.util.Objects;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
  * Demo class that requests a greeting with a supplied name.
@@ -19,15 +21,15 @@ import java.util.Objects;
 public class GreetMeMessage implements Message<GreetMeMessageResponse> {
 
   /**
-   * Set up the required message type identifier like so.
-   * There are other ways to define it, but this approach is nice.
+   * String-based type identifier of this message that is unique system-wide.
    */
-  public static final String TYPE = "GreetMe";
-  private final String type = TYPE;
+  private final String type = "GreetMe";
 
   /**
    * The actual data we want to pass to the processor.
    */
+  @NotNull(message = "'myName' can't be null")
+  @Size(min = 2, message = "'myName' has to be at least 2 characters long")
   private String myName;
 
   /**
