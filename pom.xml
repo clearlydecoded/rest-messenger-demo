@@ -15,7 +15,7 @@
   <groupId>com.clearlydecoded</groupId>
   <artifactId>rest-messenger-demo</artifactId>
   <packaging>jar</packaging>
-  <version>2.2.1</version>
+  <version>2.2.2-SNAPSHOT</version>
 
   <properties>
     <maven.compiler.source>1.8</maven.compiler.source>
@@ -53,7 +53,7 @@
     <dependency>
       <groupId>com.clearlydecoded</groupId>
       <artifactId>rest-messenger</artifactId>
-      <version>2.2.1</version>
+      <version>2.2.2-SNAPSHOT</version>
     </dependency>
 
     <dependency>
